@@ -76,6 +76,13 @@ then
 fi
 print_green "Truffle-flattener installed"
 
+if ! command -v solc-select > /dev/null
+then
+	print_blue "Installing solc-select"
+	pip3 install solc-select
+	fi
+print_green "Solc-select installed"
+
 if ! command -v slither > /dev/null
 then
 	print_blue "Installing slither"
@@ -86,14 +93,7 @@ then
 fi
 print_green "Slither installed"
 
-if ! command -v solc-select > /dev/null
-then
-	print_blue "Installing solc-select"
-	pip3 install solc-select
-	fi
-print_green "Solc-select installed"
-
-if ! [ -f "~/echidna-test" ]
+if [ ! -f "./echidna-test" ]
 then
 	print_blue "Downloading echidna"
 	curl https://github.com/crytic/echidna/releases/download/v2.0.2/echidna-test-2.0.2-Ubuntu-18.04.tar.gz -L --output echidna.tar.gz
