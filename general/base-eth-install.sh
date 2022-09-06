@@ -68,10 +68,10 @@ then
 fi
 print_green "Solc-select installed"
 
-if [ ! -f $home"/openzeppelin-contracts" ]
+if [ ! -d $home"/openzeppelin-contracts" ]
 then
-	print_blue "Cloning openzeppelin"
+	print_blue "Cloning openzeppelin-contracts"
 	git clone https://github.com/openzeppelin/openzeppelin-contracts
 fi
-print_green "Openzeppelin cloned"
+print_green "Openzeppelin-contracts cloned"
 
