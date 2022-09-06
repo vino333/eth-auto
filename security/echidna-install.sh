@@ -12,17 +12,7 @@ then
 	exit;
 fi
 
-./$base_dir/general/base-eth-install.sh
-
-if ! command -v slither > /dev/null
-then
-	print_blue "Installing slither"
-	git clone https://github.com/crytic/slither.git
-	cd slither
-	python3 setup.py install
-	cd ..
-fi
-print_green "Slither installed"
+./$base_dir/security/slither-install.sh
 
 if [ ! -f $home"/echidna-test" ]
 then
