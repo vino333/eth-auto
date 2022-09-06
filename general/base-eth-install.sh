@@ -1,24 +1,9 @@
 #!/bin/bash
 
-path=$(pwd)
+base_dir=$(dirname $0)/..
+source $base_dir/utils/prints.sh
 
-RED='\033[0;31m'
-BLUE='\033[0;34m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
-
-print_color() {
-	echo -e $@$NC
-}
-print_blue() {
-	print_color $BLUE$@
-}
-print_red() {
-	print_color $RED$@
-}
-print_green() {
-	print_color $GREEN$@
-}
+home="/home/"$SUDO_USER
 
 # verifing sudo mode
 if [ $(id -u) -ne 0 ]
@@ -27,7 +12,7 @@ then
 	exit;
 fi
 
-cd $path
+cd $home
 
 print_blue "Install Echidna Machine:"
 
@@ -80,6 +65,13 @@ if ! command -v solc-select > /dev/null
 then
 	print_blue "Installing solc-select"
 	pip3 install solc-select
-	fi
+fi
 print_green "Solc-select installed"
+
+if [ ! -f $home"/openzeppelin-contracts" ]
+then
+	print_blue "Cloning openzeppelin"
+	git clone https://github.com/openzeppelin/openzeppelin-contracts
+fi
+print_green "Openzeppelin cloned"
 
