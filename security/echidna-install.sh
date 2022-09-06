@@ -33,21 +33,21 @@ print_blue "Install Echidna Machine:"
 
 if ! command -v python3 > /dev/null
 then
-	print_blue "Install python3"
+	print_blue "Installing python3"
 	apt-get install python3
 fi
 print_green "Python3 installed"
 
 if ! command -v pip3 > /dev/null
 then
-	print_blue "Install pip3"
+	print_blue "Installing pip3"
 	apt install -y python3-pip
 fi
 print_green "Pip3 installed"
 
 if ! command -v curl > /dev/null
 then
-	print_blue "Install curl"
+	print_blue "Installing curl"
 	apt install -y curl
 fi
 print_green "Curl installed"
@@ -57,28 +57,28 @@ then
 	print_blue "Download nodejs & npm"
 	curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 
-	print_blue "Install nodejs & npm"
+	print_blue "Installing nodejs & npm"
 	apt-get install -y nodejs
 fi
 print_green "Node & npm installed"
 
 if ! command -v truffle > /dev/null
 then
-	print_blue "Install truffle"
+	print_blue "Installing truffle"
 	npm install -g truffle
 fi
 print_green "Truffle installed"
 
 if ! command -v truffle-flattener > /dev/null
 then
-	print_blue "Install truffle-flattener"
+	print_blue "Installing truffle-flattener"
 	npm install -g truffle-flattener
 fi
 print_green "Truffle-flattener installed"
 
 if ! command -v slither > /dev/null
 then
-	print_blue "Install slither"
+	print_blue "Installing slither"
 	git clone https://github.com/crytic/slither.git
 	cd slither
 	python3 setup.py install
@@ -88,16 +88,17 @@ print_green "Slither installed"
 
 if ! command -v solc-select > /dev/null
 then
-	print_blue "Install solc-select"
+	print_blue "Installing solc-select"
 	pip3 install solc-select
 	fi
 print_green "Solc-select installed"
 
 if ! [ -f "~/echidna-test" ]
 then
-	print_blue "Install echidna"
+	print_blue "Downloading echidna"
 	curl https://github.com/crytic/echidna/releases/download/v2.0.2/echidna-test-2.0.2-Ubuntu-18.04.tar.gz -L --output echidna.tar.gz
-	tar xvzf echidna.tar.gz
+	tar xzf echidna.tar.gz
+	rm echidna.tar.gz -f
 fi
 print_green "Echidna installed"
 
