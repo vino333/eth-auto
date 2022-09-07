@@ -65,6 +65,9 @@ if ! command -v solc-select > /dev/null
 then
 	print_blue "Installing solc-select"
 	pip3 install solc-select
+	print_blue "Using solidity version 0.8.16"
+	solc-select install 0.8.16
+	solc-select use 0.8.16
 fi
 print_green "Solc-select installed"
 
