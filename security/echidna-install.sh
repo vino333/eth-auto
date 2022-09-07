@@ -26,5 +26,3 @@ then
 fi
 print_green "Echidna installed"
 
-print_blue "Echidna Machine Installation Completed!"
-

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-base_dir=$(dirname $0)/..
-source $base_dir/utils/prints.sh
+eth_auto=$(dirname $0)/..
+source $eth_auto/utils/prints.sh
 
 home="/home/"$SUDO_USER
 
@@ -12,7 +12,7 @@ then
 	exit;
 fi
 
-./$base_dir/general/base-eth-install.sh
+./$eth_auto/general/base-eth-install.sh
 
 if ! command -v smartcheck > /dev/null
 then

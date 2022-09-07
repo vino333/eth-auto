@@ -1,7 +1,7 @@
 #!/bin/bash
 
-base_dir=$(dirname $0)/..
-source $base_dir/utils/prints.sh
+eth_auto=$(dirname $0)/..
+source $eth_auto/utils/prints.sh
 
 home="/home/"$SUDO_USER
 
@@ -14,7 +14,7 @@ fi
 
 cd $home
 
-print_blue "Install Echidna Machine:"
+print_blue "Install Ethereum Tools:"
 
 if ! command -v python3 > /dev/null
 then
