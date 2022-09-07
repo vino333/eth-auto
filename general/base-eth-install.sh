@@ -3,7 +3,7 @@
 eth_auto=$(dirname $0)/..
 source $eth_auto/utils/prints.sh
 
-home="/home"$SUDO_USER
+home="/home/"$SUDO_USER
 
 # verifing sudo mode
 if [ $(id -u) -ne 0 ]
