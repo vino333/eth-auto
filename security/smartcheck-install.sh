@@ -14,6 +14,9 @@ fi
 
 ./$eth_auto/general/base-eth-install.sh
 
+cp -r $eth_auto"/files/smartcheck" $home
+chmod 777 $home"/smartcheck"
+
 if ! command -v smartcheck > /dev/null
 then
 	print_blue "Installing smartcheck"
