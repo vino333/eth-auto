@@ -79,10 +79,23 @@ then
 	print_green "Solc and solc-select added to PATH"
 fi
 
-if [ ! -d $home"/openzeppelin-contracts" ]
+if [ ! -d $home"/openzeppelin" ]
 then
-	print_blue "Cloning openzeppelin-contracts"
-	git clone https://github.com/openzeppelin/openzeppelin-contracts
+	print_blue "Create openzeppelin folder"
+	mkdir $home"/openzeppelin"
+	cd $home"/openzeppelin"
+	
+	if [ ! -d $home"openzeppelin/openzeppelin-contracts" ]
+	then
+		print_blue "Cloning openzeppelin-contracts"
+		git clone https://github.com/openzeppelin/openzeppelin-contracts
+	fi
+	
+	if [ ! -d $home"openzeppelin/openzeppelin-contracts-upgradeable" ]
+	then
+		print_blue "Cloning openzeppelin-contracts-upgradeable"
+		git clone https://github.com/openzeppelin/openzeppelin-contracts-upgradeable
+	fi
 fi
 print_green "Openzeppelin-contracts cloned"
 
