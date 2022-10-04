@@ -72,6 +72,13 @@ then
 fi
 print_green "Solc-select installed"
 
+if [ -d $home'/.local/bin:' ]
+then
+	print_blue "Adding solc and aolc-select to PATH"
+	PATH=$home'/.local/bin:'$PATH
+	print_green "Solc and solc-select added to PATH"
+fi
+
 if [ ! -d $home"/openzeppelin-contracts" ]
 then
 	print_blue "Cloning openzeppelin-contracts"
