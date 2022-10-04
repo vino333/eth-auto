@@ -14,6 +14,10 @@ fi
 
 cd $home
 
+print_blue "Updating apt"
+apt update
+print_green "Apt updated"
+
 print_blue "Install Ethereum Tools:"
 
 if ! command -v python3 > /dev/null
