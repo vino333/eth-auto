@@ -85,19 +85,14 @@ then
 	mkdir $home"/openzeppelin"
 	cd $home"/openzeppelin"
 	
-	if [ ! -d $home"openzeppelin/openzeppelin-contracts" ]
-	then
-		print_blue "Cloning openzeppelin-contracts"
-		git clone https://github.com/openzeppelin/openzeppelin-contracts
-	fi
+	print_blue "Cloning openzeppelin-contracts"
+	git clone https://github.com/openzeppelin/openzeppelin-contracts
 	print_green "Openzeppelin-contracts cloned"
 	
-	if [ ! -d $home"openzeppelin/openzeppelin-contracts-upgradeable" ]
-	then
-		print_blue "Cloning openzeppelin-contracts-upgradeable"
-		git clone https://github.com/openzeppelin/openzeppelin-contracts-upgradeable
-	fi
+	print_blue "Cloning openzeppelin-contracts-upgradeable"
+	git clone https://github.com/openzeppelin/openzeppelin-contracts-upgradeable
 	print_green "Openzeppelin-contracts-upgradeable cloned"
+	
 	cd ..
 fi
 print_green "Openzeppelin folder created"
