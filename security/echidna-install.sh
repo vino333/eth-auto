@@ -15,14 +15,13 @@ fi
 ./$eth_auto/security/slither-install.sh
 
 cp -r $eth_auto"/files/echidna" $home
-chmod 777 $home"/echidna"
+chmod 777 -R $home"/echidna"
 
-if [ ! -f $home"/echidna/echidna-test" ]
+if [ ! -f $home"/echidna/helpers/echidna-test" ]
 then
 	print_blue "Downloading echidna"
 	curl https://github.com/crytic/echidna/releases/download/v2.0.2/echidna-test-2.0.2-Ubuntu-18.04.tar.gz -L --output echidna.tar.gz
-	tar xzf echidna.tar.gz -C $home"/echidna"
+	tar xzf echidna.tar.gz -C $home"/echidna/helpers"
 	rm echidna.tar.gz -f
 fi
 print_green "Echidna installed"
-
