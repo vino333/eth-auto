@@ -23,6 +23,6 @@ To install Ethereum security tools:<br>
 - Slither -> run security/slither-install.sh<br>
 - Echidna -> security/echidna-install.sh<br>
 
-Please note that installing each of this tools will also run base-eth-install as it contain many of it's requirements.<br>
+Please note that installing each of this tools installation will also run base-eth-install as it contain many of it's requirements.<br>
 Also, Echidna installation will run slither-install too, since it's one of it's requirements too.<br>
 
