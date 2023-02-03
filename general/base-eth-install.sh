@@ -72,6 +72,7 @@ then
 fi
 print_green "Solc-select installed"
 
+# a fix for Azure VMs
 if [ -d $home'/.local/bin:' ]
 then
 	print_blue "Adding solc and solc-select to PATH"
