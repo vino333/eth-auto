@@ -74,7 +74,7 @@ print_green "Solc-select installed"
 
 if [ -d $home'/.local/bin:' ]
 then
-	print_blue "Adding solc and aolc-select to PATH"
+	print_blue "Adding solc and solc-select to PATH"
 	PATH=$home'/.local/bin:'$PATH
 	print_green "Solc and solc-select added to PATH"
 fi
